@@ -1,0 +1,91 @@
+/* @theme marp-theme */
+
+@import "default";
+
+section.content h1 {
+  position: absolute;
+  left: 50px;
+  top: 40px;
+}
+section.content h2 {
+  position: absolute;
+  left: 80px;
+  top: 100px;
+}
+section.content img {
+  display: flex;
+  margin: auto;
+}
+section.content figcaption {
+  text-align: center;
+  color: #666666;
+  font-style: italic;
+}
+li.bullet {
+  list-style: none;
+}
+li.bullet::before {
+  content: "▶";
+  padding-right: 5px;
+}
+ul.images {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+section.title {
+  --title-height: 130px;
+  --subtitle-height: 70px;
+
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr var(--title-height) var(--subtitle-height) 1fr;
+  grid-template-areas: "." "title" "subtitle" ".";
+}
+
+section.title h2 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: var(--area-height);
+  line-height: var(--area-height);
+  font-size: calc(var(--area-height) * 0.5);
+  grid-area: subtitle;
+  --area-height: var(--subtitle-height);
+}
+
+section.title h1 {
+  grid-area: title;
+  --area-height: var(--title-height);
+  text-align: center;
+}
+
+section.eyecatch h1 {
+  justify-content: center;
+  background: linear-gradient(transparent 80%, #a8eaff 50%);
+}
+
+.split {
+  display: table;
+  width: 100%;
+}
+.split-item {
+  display: table-cell;
+  padding: 0px;
+  width: 60%;
+}
+.split-left {
+  position: relative;
+}
+.split-left__inner {
+  height: 100%;
+  position: fixed;
+  width: 50%;
+}
+.split-right {
+  position: relative;
+}
+.split-right__inner {
+  height: 420px;
+}
